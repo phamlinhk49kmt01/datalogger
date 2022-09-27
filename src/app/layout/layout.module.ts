@@ -16,6 +16,7 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LayoutComponent } from './layout.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -36,11 +37,11 @@ import { TranslateModule } from '@ngx-translate/core';
     MatMenuModule,
     MatListModule,
     MatSidenavModule,
-
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-
+    GoogleMapsModule,
+    DataTablesModule
 
   ], 
   exports:[

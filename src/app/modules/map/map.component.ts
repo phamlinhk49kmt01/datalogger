@@ -51,6 +51,15 @@ export class MapComponent implements OnInit {
                   "visibility": "off"
               }
           ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
       }
   ]
   }

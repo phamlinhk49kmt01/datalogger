@@ -14,6 +14,8 @@ import { ApiInterceptor } from './auth/api.interceptor';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { ApiErrorInterceptor } from './auth/api-error.interceptor';
+import { DataTablesModule } from 'angular-datatables';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +29,14 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
     NgxTranslateModule,
     LoadingBarModule,
     LoadingBarHttpClientModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
+
   ],
   providers: [
     AuthGuard,
     {provide: HTTP_INTERCEPTORS,useClass: ApiInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS,useClass: AuthInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS,useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS,useClass: ApiErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

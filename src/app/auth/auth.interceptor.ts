@@ -14,44 +14,34 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor( private router:Router) {}
+  constructor(private router: Router) { }
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
 
-    if (req.headers.get('No-Auth') === 'True'|| req.url.indexOf('https://maps.googleapis.com') !-1) {
+    if (req.headers.get('No-Auth') === 'True' || req.url.indexOf('https://maps.googleapis.com') != -1) {
       return next.handle(req.clone());
     }
+
 
     const token = localStorage.getItem("token") || '';
 
     req = this.addToken(req, token);
 
-    return next.handle(req).pipe(
-        catchError(
-            (err:HttpErrorResponse) => {
-                console.log(err.status);
-                if(err.status === 401) {
-                    this.router.navigate(['/login']);
-                } else if(err.status === 403) {
-                    this.router.navigate(['/forbidden']);
-                }
-                return throwError("Some thing is wrong");
-            }
-        )
-    );
+    return next.handle(req);
   }
 
 
-  private addToken(request:HttpRequest<any>, token:string) {
-      return request.clone(
-          {
-              setHeaders: {
-                  Authorization : `Bearer ${token}`
-              }
-          }
-      );
+  private addToken(request: HttpRequest<any>, token: string) {
+
+    return request.clone(
+      {
+        setHeaders: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
   }
 }
