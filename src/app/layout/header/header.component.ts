@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
-  constructor(private router: Router) { }
+  constructor(private router: Router,public translate: TranslateService) { }
 
   ngOnInit(): void {
+  
   }
   
   toggleSideBar() {
@@ -20,6 +22,8 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("user");
     this.router.navigate(["/login"]);
   }
 

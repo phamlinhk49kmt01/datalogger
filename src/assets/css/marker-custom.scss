@@ -1,0 +1,21 @@
+.marker-custom {
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    padding: 7.5px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    z-index: 4;
+    /*box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;*/
+}
+    .marker-custom::before {
+        background: #fff;
+        clip-path: polygon(0% 0%,50% 100%,100% 0%);
+        content: '';
+        height: 12px;
+        left: calc(50% - 12.5px);
+        position: absolute;
+        top: 99%;
+        width: 25px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    }

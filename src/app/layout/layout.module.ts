@@ -14,17 +14,21 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { LayoutComponent } from './layout.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SidebarComponent,
+    LayoutComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     HttpClientJsonpModule ,
+    TranslateModule,
     RouterModule,
     FlexLayoutModule,
     MatToolbarModule,

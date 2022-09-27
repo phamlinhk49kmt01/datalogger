@@ -1,12 +1,6 @@
-<!-- <app-header *ngIf="showHeader" fxLayout="column"></app-header>
-
-<div fxLayout="row" fxFlex="100">
-  <app-sidebar *ngIf="showSidebar" fxLayout="column" fxFlex="300px"></app-sidebar>
-  <div class="content" fxLayout="column" fxFlex>
-    <router-outlet></router-outlet>
-  </div>
-</div> -->
-<div *ngIf="usingLayout; then layout else noLayout"></div>
+<ngx-loading-bar height="2px " color="red"></ngx-loading-bar>
+<router-outlet></router-outlet>
+<!-- <div *ngIf="usingLayout; then layout else noLayout"></div>
 
 <ng-template #layout>
   <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
@@ -21,4 +15,4 @@
 </ng-template>
 <ng-template #noLayout>
   <router-outlet></router-outlet>
-</ng-template>
+</ng-template> -->
