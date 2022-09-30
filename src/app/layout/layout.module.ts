@@ -16,6 +16,7 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LayoutComponent } from './layout.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { DevextremeModule } from '../modules/devextreme.module';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    DevextremeModule
 
   ], 
   exports:[

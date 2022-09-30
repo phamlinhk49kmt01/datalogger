@@ -27,6 +27,8 @@
     "@ngx-loading-bar/router": "^6.0.2",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "devextreme": "22.1.5",
+    "devextreme-angular": "22.1.5",
     "ngx-device-detector": "^4.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
