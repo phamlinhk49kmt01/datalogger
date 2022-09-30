@@ -6,18 +6,22 @@
 
                     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
                         <button mat-icon-button class="btn-back" (click)="openDrawer()">
-                            <mat-icon>home</mat-icon>
+                            <mat-icon>arrow_back</mat-icon>
                         </button>
                         <div>Trang chủ</div>
                     </div>
+                    <a mat-icon-button class="btn-back" routerLinkActive="list-item-active" routerLink="/">
+                        <mat-icon>home</mat-icon>
+                    </a>
                 </div>
                 <div class="drawer-body">
                     <mat-nav-list>
-                    <a mat-list-item  routerLinkActive="list-item-active" *ngFor="let item of [].constructor(15    ); let i = index">
-                        <mat-icon>arrow_right_alt</mat-icon>
-                        Datalogger {{i}}
-                    </a>
-                </mat-nav-list>
+                        <a mat-list-item routerLinkActive="list-item-active"
+                            *ngFor="let item of [].constructor(30    ); let i = index">
+                            <mat-icon> my_location</mat-icon>&nbsp;
+                            Datalogger {{i}}
+                        </a>
+                    </mat-nav-list>
                     <!-- <mat-list>
                             <mat-list-item *ngFor="let item of [].constructor(15    ); let i = index"> Datalogger {{i}}
                             </mat-list-item>

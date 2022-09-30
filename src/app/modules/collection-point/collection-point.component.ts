@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 export class CollectionPointComponent implements OnInit {
   constructor(private service: CollectionPointService) { }
 
+  collectionPoints = <any>[];
+  displayedColumns: string[] = ['name'];
+
   ngOnInit(): void {
     // this.dtOptions = {
     //   ajax: {
@@ -36,11 +39,12 @@ export class CollectionPointComponent implements OnInit {
     //   },]
     // };
 
-//     this.service.getListsCollectionPoint({limit: 50, offset: 0}).subscribe(response=>{
-//       console.log(response);
-//     }, error => {
-// console.error(error);
-//     });
+    this.service.getListsCollectionPoint({limit: 50, offset: 0}).subscribe(response=>{
+      this.collectionPoints = response.data;
+      console.log(response);
+    }, error => {
+console.error(error);
+    });
   }
 
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CollectionPointRoutingModule } from './collection-point-routing.module';
 import { CollectionPointComponent } from './collection-point.component';
+import { MaterialModule } from '../material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CollectionPointComponent } from './collection-point.component';
   ],
   imports: [
     CommonModule,
-    CollectionPointRoutingModule
+    CollectionPointRoutingModule,
+    MaterialModule
   ]
 })
 export class CollectionPointModule { }

@@ -5,11 +5,14 @@
     height: 100%;
     mat-drawer{
         width: 250px;
+        background-color: rgb(56 64 31 / 84%);
+        color: white;
        
     }
     
     mat-drawer-container{
         height: 100%;
+        color: white;
     }
     
     mat-drawer-content{
