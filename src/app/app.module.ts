@@ -15,11 +15,11 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { ApiErrorInterceptor } from './auth/api-error.interceptor';
-import { DataTablesModule } from 'angular-datatables';
+import { MaterialModule } from './modules/material.module';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    MapComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +30,7 @@ import { DataTablesModule } from 'angular-datatables';
     LoadingBarModule,
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
-
+    MaterialModule
   ],
   providers: [
     AuthGuard,

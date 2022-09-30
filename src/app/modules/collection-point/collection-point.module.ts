@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { CollectionPointRoutingModule } from './collection-point-routing.module';
 import { CollectionPointComponent } from './collection-point.component';
-import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -12,8 +11,7 @@ import { DataTablesModule } from 'angular-datatables';
   ],
   imports: [
     CommonModule,
-    CollectionPointRoutingModule,
-    DataTablesModule 
+    CollectionPointRoutingModule
   ]
 })
 export class CollectionPointModule { }

@@ -1,7 +1,40 @@
-<mat-card>
-    <mat-card-content>
-        <google-map width="100%" height="100%" [center]="center" [zoom]="zoom" [options]="mapOption">
-           
-        </google-map> 
-    </mat-card-content>
-</mat-card>
+<div class="page-content" fxFill>
+    <mat-drawer-container hasBackdrop="false">
+        <mat-drawer mode="over" [opened]="isDrawerOpen">
+            <div class="drawer-container">
+                <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="12px" class="drawer-header">
+
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
+                        <button mat-icon-button class="btn-back" (click)="openDrawer()">
+                            <mat-icon>home</mat-icon>
+                        </button>
+                        <div>Trang chủ</div>
+                    </div>
+                </div>
+                <div class="drawer-body">
+                    <mat-nav-list>
+                    <a mat-list-item  routerLinkActive="list-item-active" *ngFor="let item of [].constructor(15    ); let i = index">
+                        <mat-icon>arrow_right_alt</mat-icon>
+                        Datalogger {{i}}
+                    </a>
+                </mat-nav-list>
+                    <!-- <mat-list>
+                            <mat-list-item *ngFor="let item of [].constructor(15    ); let i = index"> Datalogger {{i}}
+                            </mat-list-item>
+                        </button>
+                        
+                    </mat-list> -->
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <google-map width="100%" height="100%" [center]="center" [zoom]="zoom" [options]="mapOption">
+
+            </google-map>
+
+            <button mat-icon-button class="open-drawer" (click)="openDrawer()" *ngIf="!isDrawerOpen">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

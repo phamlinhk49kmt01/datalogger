@@ -15,11 +15,11 @@ const routes: Routes = [
       { path: 'dashboard', loadChildren: () => DashboardModule },
       { path: '', loadChildren: () => HomeModule },
       { path: 'home', loadChildren: () => HomeModule },
-      { path: 'map', loadChildren: () => MapModule },
       { path: 'collection-point', loadChildren: () => CollectionPointModule },
     ],
     canActivate: [AuthGuard]
   },
+  { path: 'map', loadChildren: () => MapModule },
   { path: 'login', loadChildren: () => LoginModule }
 ];
 

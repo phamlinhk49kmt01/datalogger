@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { GoogleMap } from '@angular/google-maps';
 import { MarkerCustom } from 'src/app/utils/marker-custom';
 
@@ -9,7 +10,7 @@ import { MarkerCustom } from 'src/app/utils/marker-custom';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-
+  toggleSidebar = false;
   center: google.maps.LatLngLiteral = { lat: 20.978057, lng: 105.7938073 };
   zoom = 14;
   markerPosition: google.maps.LatLngLiteral = { lat: 20.978057, lng: 105.7938073 };
@@ -18,15 +19,6 @@ export class MapComponent implements OnInit {
     disableDefaultUI : true,
     disableDoubleClickZoom : true,
     styles:[
-      {
-          "featureType": "administrative",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
       {
           "featureType": "poi",
           "stylers": [
@@ -64,9 +56,22 @@ export class MapComponent implements OnInit {
   ]
   }
 
-  constructor() { }
+  options: FormGroup;
+
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      bottom: 0,
+      fixed: false,
+      top: 0
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  isDrawerOpen = true;
+  openDrawer(){
+    this.isDrawerOpen =!this.isDrawerOpen;
   }
 
   @ViewChild(GoogleMap) map!: GoogleMap;
