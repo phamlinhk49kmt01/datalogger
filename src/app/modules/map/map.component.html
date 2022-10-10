@@ -17,9 +17,8 @@
                 <div class="drawer-body">
                     <mat-nav-list>
                         <a mat-list-item routerLinkActive="list-item-active"
-                            *ngFor="let item of [].constructor(30    ); let i = index">
-                            <mat-icon> my_location</mat-icon>&nbsp;
-                            Datalogger {{i}}
+                            *ngFor="let item of collectionPoints; let i = index">
+                            <mat-icon> my_location</mat-icon>&nbsp; {{item["name"]}} - {{item["datalogger_name"]}} 
                         </a>
                     </mat-nav-list>
                     <!-- <mat-list>
