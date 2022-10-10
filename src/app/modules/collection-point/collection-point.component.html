@@ -1,26 +1,38 @@
 <mat-card class="page-content" fxFill>
-    <mat-card-content>
-        <table mat-table [dataSource]="collectionPoints" class="mat-elevation-z8">
+  <mat-card-content fxFill #tableWrapper>
+    <nz-table nzBordered nzShowSizeChanger [nzData]="collectionPoints" [nzFrontPagination]="false" [nzLoading]="loading"
+      [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex" (nzQueryParams)="onQueryParamsChange($event)"
+      [nzShowSizeChanger]="false">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th nzColumnKey="name">Tên điểm</th>
+          <th>Loại điểm</th>
+          <th>Hành động</th>
 
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-              <th mat-header-cell *matHeaderCellDef> No. </th>
-              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-            </ng-container>
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          
-    </mat-card-content>
-   
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of collectionPoints; let i = index">
+          <td>{{ i +1 + (pageIndex - 1) * pageSize}}</td>
+          <td>{{ data.name }}</td>
+          <td></td>
+          <td>
+            <nz-space>
+              <button *nzSpaceItem nz-button nzType="primary" nzSize="small"><span nz-icon nzType="form"></span> Edit
+              </button>
+              <button *nzSpaceItem nz-button nzType="primary" nzSize="small" nz-popconfirm
+                nzPopconfirmTitle="Bạn có chắc muốn xoá điểm này không?" nzOkText="Yes" nzCancelText="No"
+                [nzBeforeConfirm]="beforeConfirmDelete" nz (nzOnConfirm)="confirm()" (nzOnCancel)="cancel()"><span
+                  nz-icon nzType="delete"></span> Delete </button>
+              <button *nzSpaceItem nz-button nzSize="small">Save</button>
+
+            </nz-space>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+  </mat-card-content>
+
 </mat-card>
