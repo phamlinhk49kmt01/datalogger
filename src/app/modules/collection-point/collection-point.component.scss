@@ -1,4 +1,34 @@
-:host{
+:host {
     width: 100%;
     height: 100%;
+    &.auto-scroll-y {
+        height: 100%;
+        .ant-spin-nested-loading,
+        .ant-spin-container,
+        .ant-table,
+        .ant-table-scroll,
+        .ant-table-body-inner,
+        .ant-table-fixed-left,
+        .ant-table-content {
+            height: 100%;
+        }
+        .ant-table-content {
+            position: relative;
+        }
+        // .ant-table-body, .ant-table-body-inner {
+        // overflow-y: auto!important;[如果要同时支持横向滚动，请注释此行(if you enable scroll-x, please disable this)]
+        // }
+        // .ant-table-header {
+        // overflow-y: hidden!important;[如果列有轻微错位请注释掉这行(if table a little garbled, try disable this)]
+        // }
+        .ant-table-body {
+            height: calc(100% - 27px);
+        }
+        .ant-table-body-outer {
+            height: calc(100% - 27px);
+        }
+        .ant-table-body-inner {
+            overflow-x: hidden;
+        }
+    }
 }

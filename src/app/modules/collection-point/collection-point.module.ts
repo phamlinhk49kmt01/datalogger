@@ -9,10 +9,17 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NsAutoHeightTableDirective } from 'src/app/directives/ns-auto-height-table.directive';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { ModalCreateComponent } from './modal-create/modal-create.component';
 
 @NgModule({
   declarations: [
-    CollectionPointComponent
+    CollectionPointComponent,
+    NsAutoHeightTableDirective,
+    ModalCreateComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +28,9 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     NzTableModule ,
     NzButtonModule,
     NzIconModule,
-    NzSpaceModule,NzPopconfirmModule
+    NzSpaceModule,NzPopconfirmModule,
+    NzModalModule,
+    NzFormModule ,NzInputModule
   ]
 })
 export class CollectionPointModule { }

@@ -1,11 +1,12 @@
 <mat-card class="page-content" fxFill>
   <mat-card-content fxFill #tableWrapper>
-    <nz-table nzBordered nzShowSizeChanger [nzData]="collectionPoints" [nzFrontPagination]="false" [nzLoading]="loading"
-      [nzTotal]="total" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex" (nzQueryParams)="onQueryParamsChange($event)"
-      [nzShowSizeChanger]="false">
+    <nz-table [nsAutoHeightTable]="70" nzBordered nzShowSizeChanger [nzData]="collectionPoints"
+      [nzFrontPagination]="false" [nzLoading]="loading" [nzTotal]="total" [nzPageSize]="pageSize"
+      [nzPageIndex]="pageIndex" (nzQueryParams)="onQueryParamsChange($event)" [nzShowSizeChanger]="false"
+      [nzScroll]="{ x: 'auto'}" [nzSize]="'small'" [nzTableLayout]="'fixed'">
       <thead>
         <tr>
-          <th>STT</th>
+          <th nzWidth="70px">STT</th>
           <th nzColumnKey="name">Tên điểm</th>
           <th>Loại điểm</th>
           <th>Hành động</th>
@@ -16,23 +17,19 @@
         <tr *ngFor="let data of collectionPoints; let i = index">
           <td>{{ i +1 + (pageIndex - 1) * pageSize}}</td>
           <td>{{ data.name }}</td>
-          <td></td>
+          <td>sss</td>
           <td>
             <nz-space>
-              <button *nzSpaceItem nz-button nzType="primary" nzSize="small"><span nz-icon nzType="form"></span> Edit
+              <button *nzSpaceItem nz-button nzType="primary" nzSize="small" (click)="showModalEdit()"><span nz-icon
+                  nzType="form"></span> Edit
               </button>
-              <button *nzSpaceItem nz-button nzType="primary" nzSize="small" nz-popconfirm
-                nzPopconfirmTitle="Bạn có chắc muốn xoá điểm này không?" nzOkText="Yes" nzCancelText="No"
-                [nzBeforeConfirm]="beforeConfirmDelete" nz (nzOnConfirm)="confirm()" (nzOnCancel)="cancel()"><span
-                  nz-icon nzType="delete"></span> Delete </button>
-              <button *nzSpaceItem nz-button nzSize="small">Save</button>
-
+              <button *nzSpaceItem nz-button nzType="primary" nzSize="small" (click)="showConfirm()"><span nz-icon
+                  nzType="delete"></span> Delete </button>
             </nz-space>
           </td>
         </tr>
       </tbody>
     </nz-table>
-
   </mat-card-content>
 
 </mat-card>

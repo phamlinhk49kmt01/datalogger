@@ -1,0 +1,47 @@
+<form nz-form>  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="5">Warning</nz-form-label>
+      <nz-form-control nzValidateStatus="warning" [nzSpan]="12">
+        <input nz-input name="warningValid" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="5">Validating</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzValidateStatus="validating"
+        nzHasFeedback
+        nzValidatingTip="I'm validating the content"
+      >
+     <input nz-input name="validating" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="5">Success</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzValidateStatus="success" nzHasFeedback>
+        <input nz-input name="successValid" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="5">Warning</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzValidateStatus="warning"
+        nzHasFeedback
+        nzWarningTip="Should be combination of numbers & alphabets"
+      >
+        <input nz-input  name="warningHighValid" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="5">Fail</nz-form-label>
+      <nz-form-control
+        [nzSpan]="12"
+        nzValidateStatus="error"
+        nzHasFeedback
+        nzErrorTip="Should be combination of numbers & alphabets"
+      >
+        <input nz-input  name="invalidValid" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
