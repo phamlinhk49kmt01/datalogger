@@ -3,5 +3,11 @@
     "HOME":"Trang chủ",
     "COLLECTION_POINT":"Điểm thu dữ liệu",
     "CHANGE_PASSWORD":"Đổi mật khẩu",
-    "LOGOUT":"Đăng xuất"
+    "LOGOUT":"Đăng xuất",
+    "DATALOGGER":"Datalogger",
+    "DATALOGGER_NAME":"Tên Datalogger",
+    "DATALOGGER_CODE":"Mã Datalogger",
+    "TIME_UPDATE":"Thời gian cập nhật",
+    "TIME_SETUP":"Thời gian cài đặt",
+    "TIME_SETUP_SUCCESS":"Cài đặt thành công"
 }

@@ -3,5 +3,11 @@
     "HOME":"Home",
     "COLLECTION_POINT":"Collection Point",
     "CHANGE_PASSWORD":"Change Password",
-    "LOGOUT":"Logout"
+    "LOGOUT":"Logout",
+    "DATALOGGER":"Datalogger",
+    "DATALOGGER_NAME":"Datalogger Name",
+    "DATALOGGER_CODE":"Datalogger Code",
+    "TIME_UPDATE":"Time Update Data",
+    "TIME_SETUP":"Time Setup",
+    "TIME_SETUP_SUCCESS":"Time Setup Success"
 }

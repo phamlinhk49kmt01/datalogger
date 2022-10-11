@@ -1,0 +1,51 @@
+<ng-template #suffixIconButton>
+    <button nz-button nzType="primary">
+        <span nz-icon nzType="search"></span>
+        <span>Search</span>
+    </button>
+</ng-template>
+<mat-card fxFill>
+    <mat-card-title>
+        <div fxLayout.sm="column"  fxLayout="row" fxLayoutGap="20px">
+            <button nz-button nzType="primary">
+                <span nz-icon nzType="plus"></span>
+                <span>Add datalogger</span>
+            </button>
+            <nz-space></nz-space>
+            <div>
+                <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+                    <input type="text" nz-input placeholder="keyword" />
+                </nz-input-group>
+            </div>
+
+        </div>
+    </mat-card-title>
+    <mat-card-content>
+        <nz-table nzBordered="true" nzShowSizeChanger [nzData]="listDataloggers" [nzFrontPagination]="false"
+            [nzLoading]="isLoading" [nzTotal]="totalRows" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
+            (nzQueryParams)="loadData($event)"
+            [nzScroll]="{ x: '1000px', y: 'calc(100vh - 300px)' }">
+            
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>{{"DATALOGGER_NAME" | translate}}</th>
+                    <th>{{"DATALOGGER_CODE" | translate}}</th>
+                    <th>{{"TIME_UPDATE" | translate}}</th>
+                    <th>{{"TIME_SETUP" | translate}}</th>
+                    <th>{{"TIME_SETUP_SUCCESS" | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of listDataloggers; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{ data.name}}</td>
+                    <td>{{ data.code}}</td>
+                    <td>{{ data.last_data.TimeUpdate}}</td>
+                    <td>{{ data.last_get_setup}}</td>
+                    <td>{{ data.last_setup_success}}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </mat-card-content>
+</mat-card>

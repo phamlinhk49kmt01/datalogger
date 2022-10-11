@@ -13,10 +13,10 @@ import {
 
   @Directive({
     // tslint:disable-next-line: directive-selector
-    selector: '[nsAutoHeightTable]',
+    selector: '[nsAutoWidthHeightTable]',
   })
-  export class NsAutoHeightTableDirective implements OnInit, AfterViewInit {
-    @Input('nsAutoHeightTable')
+  export class NsAutoWidthHeightTableDirective implements OnInit, AfterViewInit {
+    @Input('nsAutoWidthHeightTable')
     offset: number = 0;
   
     constructor(private element: ElementRef, private table: NzTableComponent<any>, private cd: ChangeDetectorRef) {
@@ -73,6 +73,11 @@ import {
     
             this.table.nzScroll = {
               ...{
+                x:(
+                  this.element.nativeElement.parentElement.offsetWidth -
+                  this.element.nativeElement.offsetLeft -
+                  offset
+                ).toString() + 'px',
                 y:
                   (
                     this.element.nativeElement.parentElement.offsetHeight -
