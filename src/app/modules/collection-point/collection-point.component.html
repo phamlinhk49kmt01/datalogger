@@ -1,6 +1,6 @@
 <mat-card class="page-content" fxFill>
   <mat-card-content fxFill #tableWrapper>
-    <nz-table [nsAutoWidthHeightTable]="70" nzBordered nzShowSizeChanger [nzData]="collectionPoints"
+    <nz-table [nsAutoHeightTable]="70" nzBordered nzShowSizeChanger [nzData]="collectionPoints"
       [nzFrontPagination]="false" [nzLoading]="loading" [nzTotal]="total" [nzPageSize]="pageSize"
       [nzPageIndex]="pageIndex" (nzQueryParams)="onQueryParamsChange($event)" [nzShowSizeChanger]="false"
       [nzScroll]="{ x: 'auto'}" [nzSize]="'small'" [nzTableLayout]="'fixed'">

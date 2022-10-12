@@ -6,19 +6,23 @@ import { DeviceComponent } from './device.component';
 import { MaterialModule } from '../material.module';
 import { NzModule } from '../nz.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { DirectivesModule } from '../directives.module';
+import { DeviceSettingComponent } from './device-setting/device-setting.component';
 
 
 
 @NgModule({
   declarations: [
-    DeviceComponent
+    DeviceComponent,
+    DeviceSettingComponent,
   ],
   imports: [
     CommonModule,
     DeviceRoutingModule,
     MaterialModule,
     NzModule,
-    TranslateModule
+    TranslateModule,
+    DirectivesModule
   ]
 })
 export class DeviceModule { }

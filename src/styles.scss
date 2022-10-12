@@ -9,12 +9,12 @@
 html,
 body {
     height: 100%;
-}
 
-body {
     margin: 0;
     font-family: Open Sans, sans-serif !important;
+    // .ant-table-content{overflow: auto;}
 }
+
 
 
 @media only screen and (min-width: 601px) {

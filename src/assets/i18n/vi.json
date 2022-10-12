@@ -9,5 +9,10 @@
     "DATALOGGER_CODE":"Mã Datalogger",
     "TIME_UPDATE":"Thời gian cập nhật",
     "TIME_SETUP":"Thời gian cài đặt",
-    "TIME_SETUP_SUCCESS":"Cài đặt thành công"
+    "TIME_SETUP_SUCCESS":"Cài đặt thành công",
+    "LOCATION":"Vị trí",
+    "DESCRIPTION":"Mô tả",
+    "ACTION":"Thao tác",
+    "EDIT":"Chỉnh sửa",
+    "SETTING":"Cài đặt"
 }

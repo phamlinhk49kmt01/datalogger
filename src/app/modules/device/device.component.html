@@ -6,31 +6,38 @@
 </ng-template>
 <mat-card fxFill>
     <mat-card-title>
-        <div fxLayout.sm="column"  fxLayout="row" fxLayoutGap="20px">
-            <button nz-button nzType="primary">
-                <span nz-icon nzType="plus"></span>
-                <span>Add datalogger</span>
-            </button>
-            <nz-space></nz-space>
+        <div fxFlex  fxLayout="row" fxLayoutGap="20px">
+            <div>
+                <button nz-button nzType="primary">
+                    <span nz-icon nzType="plus"></span>
+                    <span>Add datalogger</span>
+                </button>
+              
+            </div>
             <div>
                 <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
                     <input type="text" nz-input placeholder="keyword" />
                 </nz-input-group>
             </div>
-
         </div>
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content  fxLayout="column" fxFill>
         <nz-table nzBordered="true" nzShowSizeChanger [nzData]="listDataloggers" [nzFrontPagination]="false"
             [nzLoading]="isLoading" [nzTotal]="totalRows" [nzPageSize]="pageSize" [nzPageIndex]="pageIndex"
             (nzQueryParams)="loadData($event)"
-            [nzScroll]="{ x: '1000px', y: 'calc(100vh - 300px)' }">
+            nzSize="small"
+            [nzScroll]="{x:'auto'}"
+            [nsAutoHeightTable]="70" 
+            >
             
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th nzWidth="70px" nzAlign="center">STT</th>
+                    <th>{{"ACTION" | translate}}</th>
                     <th>{{"DATALOGGER_NAME" | translate}}</th>
                     <th>{{"DATALOGGER_CODE" | translate}}</th>
+                    <th>{{"LOCATION" | translate}}</th>
+                    <th>{{"DESCRIPTION" | translate}}</th>
                     <th>{{"TIME_UPDATE" | translate}}</th>
                     <th>{{"TIME_SETUP" | translate}}</th>
                     <th>{{"TIME_SETUP_SUCCESS" | translate}}</th>
@@ -38,9 +45,18 @@
             </thead>
             <tbody>
                 <tr *ngFor="let data of listDataloggers; let i = index">
-                    <td>{{i+1}}</td>
+                    <td nzAlign="center">{{i+1}}</td>
+                    <td>
+                        <nz-space>
+                            <button *nzSpaceItem nz-button nzType="primary" nzSize="small"><span nz-icon nzType="form" nzTheme="outline"></span> {{"EDIT" | translate}}</button>
+                            <button *nzSpaceItem nz-button nzType="primary" nzSize="small"><span nz-icon nzType="setting" nzTheme="outline"></span>  {{"SETTING" | translate}}</button>
+                        </nz-space>
+                    </td>
                     <td>{{ data.name}}</td>
                     <td>{{ data.code}}</td>
+                  
+                    <td>{{ data.location}}</td>
+                    <td>{{ data.description}}</td>
                     <td>{{ data.last_data.TimeUpdate}}</td>
                     <td>{{ data.last_get_setup}}</td>
                     <td>{{ data.last_setup_success}}</td>

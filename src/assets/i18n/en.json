@@ -9,5 +9,10 @@
     "DATALOGGER_CODE":"Datalogger Code",
     "TIME_UPDATE":"Time Update Data",
     "TIME_SETUP":"Time Setup",
-    "TIME_SETUP_SUCCESS":"Time Setup Success"
+    "TIME_SETUP_SUCCESS":"Time Setup Success",
+    "LOCATION":"Location",
+    "DESCRIPTION":"Description",
+    "ACTION":"Actions",
+    "EDIT":"Edit",
+    "SETTING":"Setting"
 }
